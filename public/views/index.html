@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/client.js" charset="utf-8"></script>
+
+  </script>
+  <title>ANGULAR</title>
+</head>
+
+<body ng-app='myApp'>
+  <h1>NG Launchpad</h1>
+  <div ng-controller="AngularIntro as ai">
+    <input type="text" ng-model="ai.yearIn" placeholder="year" />
+    <input type="text" ng-model="ai.makeIn" placeholder="make" />
+    <input type="text" ng-model="ai.modelIn" placeholder="model" />
+    <input type="text" ng-model="ai.costIn" placeholder="cost" />
+    <button ng-click="ai.addCar()">Add Car</button>
+    <p ng-repeat='car in ai.cars'>
+      {{car.model}} {{car.year}} {{car.make}} ${{car.cost}}
+      <p>
+
+      </p>
+      <h2 ng-show='ai.showFront' ng-click='ai.toggleShow()'>Front</h2>
+      <h2 ng-hide='ai.showFront' ng-click='ai.toggleShow()'>Back</h2>
+
+    </p>
+  </div>
+</body>
+
+</html>
